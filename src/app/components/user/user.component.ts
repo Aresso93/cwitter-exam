@@ -11,3 +11,7 @@ import { CommonModule } from '@angular/common';
 export class UserComponent {
 
 }
+
+//username: Braresca
+//indirizzo mail: bra.resca@fakemail.com
+//password: superpippo

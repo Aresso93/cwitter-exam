@@ -2,13 +2,14 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FirestoreService } from 'src/app/services/firestore.service';
 import { Cwit } from 'src/app/model/cwit';
+import { CwitCardComponent } from "../cwit-card/cwit-card.component";
 
 @Component({
-  selector: 'app-home',
-  standalone: true,
-  imports: [CommonModule],
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss']
+    selector: 'app-home',
+    standalone: true,
+    templateUrl: './home.component.html',
+    styleUrls: ['./home.component.scss'],
+    imports: [CommonModule, CwitCardComponent]
 })
 export class HomeComponent implements OnInit{
 
@@ -17,11 +18,10 @@ export class HomeComponent implements OnInit{
   constructor(private firestore: FirestoreService){}
 
   ngOnInit(): void {
-    this.firestore.getCwits()
-    // .then(data => {
-    //   console.log(data)
-    //   this.cwits = data as Cwit[]
-    // })
+    this.firestore.getCwits().then(data => {
+      console.log(data)
+      this.cwits = data as Cwit[]
+    })
   }
 
 }

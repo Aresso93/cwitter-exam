@@ -5,10 +5,12 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { NewCwitComponent } from './components/new-cwit/new-cwit.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    NewCwitComponent
   ],
   imports: [
     BrowserModule,
