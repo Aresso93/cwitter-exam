@@ -1,5 +1,5 @@
 
-<ul>
-  <li *ngFor="let cwit of cwits">{{cwit.text}} postato da {{cwit.authorName}}</li>
+<div class="cwit-container">
+  <app-cwit-card *ngFor="let cwit of cwits" [cwit]="cwit"></app-cwit-card> 
 
-<ul>
+</div>

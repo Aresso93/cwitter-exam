@@ -1,0 +1,19 @@
+<div class="container" *ngIf="cwit">
+
+    <span>
+        Autore del post: {{cwit.authorName}}
+    </span>
+            
+    <span>
+        Data del post: {{cwit.creationTime}}
+    </span>
+
+    <span>
+        <img src="{{cwit.url}}">
+    </span>
+
+    <span>
+        {{cwit.text}}
+    </span>
+   
+</div>
