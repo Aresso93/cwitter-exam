@@ -21,4 +21,8 @@ import {MatButtonModule} from '@angular/material/button';
 })
 export class NewCwitComponent {
   constructor(private firestoreServ: FirestoreService){}
+
+  postCwit(){
+    this.firestoreServ.postCwit
+  }
 }

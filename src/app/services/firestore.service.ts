@@ -48,6 +48,7 @@ export class FirestoreService {
   }
  
   postCwit(cwit: Cwit, author: string) {
+    //da rifinire e implementare
     const cwitsCollection = collection(this.db, 'cwit');
     const newCwitRef = addDoc(cwitsCollection, {
         text: cwit.text, 
