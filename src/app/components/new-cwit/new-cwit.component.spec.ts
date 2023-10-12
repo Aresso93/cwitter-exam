@@ -8,7 +8,7 @@ describe('NewCwitComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [NewCwitComponent]
+      imports: [NewCwitComponent]
     });
     fixture = TestBed.createComponent(NewCwitComponent);
     component = fixture.componentInstance;

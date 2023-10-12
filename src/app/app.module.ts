@@ -10,13 +10,14 @@ import { NewCwitComponent } from './components/new-cwit/new-cwit.component';
 @NgModule({
   declarations: [
     AppComponent,
-    NewCwitComponent
+    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    NewCwitComponent
   ],
   providers: [],
   bootstrap: [AppComponent]

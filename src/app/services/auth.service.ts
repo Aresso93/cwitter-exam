@@ -74,3 +74,9 @@ export class AuthService {
 
 
 }
+
+// 1) header con ricerca(da implementare alla fine se avanza tempo) e navigation
+// 2) home con tutti i cwit di tutti gli utenti (se riusciamo limitare il numero a 20cwit più recenti) - pagina con post
+// 4) pagina user con info utente e solo i post dell'autore
+// 5) pagina o dialog di inserimento nuovo cwit accessibile solo da pagina 'user'
+

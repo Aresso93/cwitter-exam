@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { AuthService } from 'src/app/services/auth.service';
 import { RouterModule } from '@angular/router';
 import { User } from 'firebase/auth';
+import { FirestoreService } from 'src/app/services/firestore.service';
 
 @Component({
   selector: 'app-header',
@@ -18,7 +19,7 @@ export class HeaderComponent {
 
   user: User | null = null;
 
-  constructor(private authServ: AuthService){
+  constructor(private authServ: AuthService, private fireServ: FirestoreService){
     this.authServ.firebaseUser.subscribe(firebaseUser => this.user = firebaseUser )
   }
 
