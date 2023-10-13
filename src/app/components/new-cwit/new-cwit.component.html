@@ -1,9 +1,15 @@
 <form class="form">
     <mat-form-field class="width">
-      <input matInput #message maxlength="140" placeholder="Es. quanto è bella Helen Busk">
-      <mat-hint align="start"><strong>Scrivi qui il tuo cwit!</strong> </mat-hint>
+      <input [(ngModel)]="cwitText" [ngModelOptions]="{standalone: true}" matInput #message maxlength="140" placeholder="Es. quanto è bella Helen Busk">
+      <mat-hint align="start"><span>Scrivi qui il tuo cwit!</span></mat-hint>
       <mat-hint align="end">{{message.value.length}} / 140</mat-hint>
-      <button mat-stroked-button color="accent" (click)="postCwit()">Posta</button>
     </mat-form-field>
+    <mat-form-field class="width">
+      <input [(ngModel)]="cwitUrl" [ngModelOptions]="{standalone: true}" placeholder="Es. HelenBuskNuda.jpg"><br>
+      <mat-hint align="start"><span>Aggiungi l'URL a un'immagine!</span></mat-hint>
+      <mat-hint align="end">A</mat-hint>
+
+    </mat-form-field>
+    <button mat-stroked-button color="accent" (click)="postCwit()">Posta</button>
   </form>
-  
+

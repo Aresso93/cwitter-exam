@@ -1,13 +1,32 @@
-Utente: {{user?.username}}
+<!-- Utente: {{user?.username}} <br>
+Indirizzo mail: {{fireUser?.email}}
+<button mat-stroked-button color="accent" routerLink="/new-cwit">+</button><br>
+Cwit dell'utente: <br>
 
-<button mat-stroked-button color="accent" routerLink="/new-cwit">+</button>
+<div class="cwit-container">
+  <app-cwit-card *ngFor="let cwit of userCwits" [cwit]="cwit"></app-cwit-card>
+
+</div> -->
 
 
-<!-- 
-2) home con tutti i cwit di tutti gli utenti (se riusciamo limitare il numero a 20cwit più recenti) - pagina con post
-4) pagina user con info utente e solo i post dell'autore
-5) pagina di inserimento nuovo cwit accessibile solo da pagina 'user'
-----
-form
-card
-pagina con post -->
+<div class="container">
+  <mat-card class="user-card">
+      <mat-card-header>
+        <div mat-card-avatar class="example-header-image"></div>
+        <mat-card-title>Utente: {{user?.username}}</mat-card-title>
+        <mat-card-subtitle>Indirizzo mail: {{fireUser?.email}}</mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-content>
+        Cwit all'attivo:
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-stroked-button color="accent" routerLink="/new-cwit">new</button><br>
+      </mat-card-actions>
+    </mat-card>
+
+</div>
+
+<div class="cwit-container" >
+  <app-cwit-card *ngFor="let cwit of userCwits" [cwit]="cwit" ></app-cwit-card>
+
+</div>

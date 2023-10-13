@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Firestore, addDoc, collection, doc, getDoc, getDocs, getFirestore, setDoc } from "firebase/firestore";
+import { Firestore, addDoc, collection, doc, getDoc, getDocs, getFirestore, query, setDoc, where } from "firebase/firestore";
 import { FireappService } from './fireapp.service';
 import { OurUser } from '../model/our-user';
 import { Cwit } from '../model/cwit';
@@ -9,7 +9,6 @@ import { Cwit } from '../model/cwit';
   providedIn: 'root'
 })
 export class FirestoreService {
-
 
   db: Firestore;
 
@@ -26,16 +25,15 @@ export class FirestoreService {
         url: doc.data()['url'],
         author: doc.data()['author'],
         authorName: doc.data()['authorName'],
-        creationTime: doc.data()['creationTime'].toDate(),
+        creationTime: doc.data()['creationTime']?.toDate(),
       }
     }));
-    
+
 
 
   }
 
-
-  postOurUser(ourUser: OurUser, uid: string){ 
+  postOurUser(ourUser: OurUser, uid: string){
     const docUrl = doc(this.db, 'user', uid);
     return setDoc(docUrl, ourUser);
   }
@@ -45,18 +43,29 @@ export class FirestoreService {
     console.log(docUrl);
     return getDoc(docUrl)
   }
- 
-  postCwit(cwit: Cwit, author: string) {
-    //da rifinire e implementare
+
+  postCwit(cwit: Cwit) {
     const cwitsCollection = collection(this.db, 'cwit');
-    const newCwitRef = addDoc(cwitsCollection, {
-        text: cwit.text, 
-        author: author,
-    });
+    const newCwitRef = addDoc(cwitsCollection, cwit);
 
     return newCwitRef;
 }
- 
+
+  async loadUserCwits(uid:string){
+    const q = query(collection(this.db, "cwit"), where("author", "==", uid));
+    const querySnapshot = await getDocs(q)
+    const userCwits = querySnapshot.docs.map(doc => {
+      return {
+        text: doc.data()['text'],
+        url: doc.data()['url'],
+        author: doc.data()['author'],
+        authorName: doc.data()['authorName'],
+        creationTime: doc.data()['creationTime'].toDate(),
+      }
+    })
+    return userCwits
+
+  }
 
 }
 

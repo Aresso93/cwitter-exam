@@ -1,0 +1,34 @@
+.cwit-container{
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 8px;
+  justify-content: center;
+  align-items: center;
+}
+.example-card {
+  max-width: 500px;
+  min-width: 500px;
+}
+
+.example-header-image {
+  background-size: cover;
+}
+
+.container{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 8;
+  margin-bottom: 8px;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.user-card{
+  width: 600px;
+  height: 200px;
+  margin-top: 8px;
+}
