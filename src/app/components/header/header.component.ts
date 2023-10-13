@@ -4,13 +4,19 @@ import { AuthService } from 'src/app/services/auth.service';
 import { RouterModule } from '@angular/router';
 import { User } from 'firebase/auth';
 import { FirestoreService } from 'src/app/services/firestore.service';
+import {MatButtonModule} from '@angular/material/button';
+import {MatIconModule} from '@angular/material/icon';
+import {MatToolbarModule} from '@angular/material/toolbar';
 
 @Component({
   selector: 'app-header',
   standalone: true,
   imports: [
     CommonModule,
-    RouterModule
+    RouterModule,
+    MatButtonModule,
+    MatIconModule,
+    MatToolbarModule
   ],
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss']

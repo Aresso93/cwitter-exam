@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormBuilder, ReactiveFormsModule } from '@angular/forms';
+import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { AuthService } from 'src/app/services/auth.service';
 import { OurUser } from 'src/app/model/our-user';
+import {MatButtonModule} from '@angular/material/button';
 
 
 @Component({
@@ -10,7 +11,8 @@ import { OurUser } from 'src/app/model/our-user';
   standalone: true,
   imports: [
     CommonModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatButtonModule
   ],
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.scss']
@@ -18,9 +20,9 @@ import { OurUser } from 'src/app/model/our-user';
 export class RegisterComponent {
 
   registerForm = this.fb.group({
-    username:[''],
-    email:[''],
-    psw:['']
+    username:['', [Validators.required, Validators.minLength(3), Validators.maxLength(20)]],
+    email:['', [Validators.required, Validators.email]],
+    psw:['', [Validators.required, Validators.minLength(9)]]
   })
 
   constructor(private fb: FormBuilder, private authServ: AuthService){}

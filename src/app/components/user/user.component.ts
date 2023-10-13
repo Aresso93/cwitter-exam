@@ -3,13 +3,15 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { OurUser } from 'src/app/model/our-user';
 import { AuthService } from 'src/app/services/auth.service';
+import {MatButtonModule} from '@angular/material/button';
 
 @Component({
   selector: 'app-user',
   standalone: true,
   imports: [
     CommonModule,
-    RouterModule
+    RouterModule,
+    MatButtonModule
   ],
   templateUrl: './user.component.html',
   styleUrls: ['./user.component.scss']

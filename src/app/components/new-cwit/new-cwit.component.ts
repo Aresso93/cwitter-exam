@@ -20,6 +20,9 @@ import {MatButtonModule} from '@angular/material/button';
   styleUrls: ['./new-cwit.component.scss']
 })
 export class NewCwitComponent {
+
+  cwitText: string = ''
+
   constructor(private firestoreServ: FirestoreService){}
 
   postCwit(){

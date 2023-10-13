@@ -1,13 +1,23 @@
-<header>
+<mat-toolbar>
+  <button routerLink="/home" mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+    <mat-icon >home</mat-icon>
+  </button>
+  <button *ngIf="!user" routerLink="/login" mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+    <mat-icon >login</mat-icon>
+  </button>
+ 
   <span>Cwitter</span>
-  <div>
-    <button routerLink="/home">Home</button>
-    <button routerLink="/user">User Page</button>
-    <button *ngIf="user" (click)="logout()">logout</button>
-    <div *ngIf="!user">
-      <button routerLink="/login">login</button>
-      <button routerLink="/register">register</button>
-    </div>
-  </div>
+  <span *ngIf="user">, accesso eseguito come {{user!.email}}</span>
+  <span class="example-spacer"></span>
+  
+  <button *ngIf="!user" routerLink="/register" mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+    <mat-icon>app_registration</mat-icon>
+  </button>
+  <button *ngIf="user" (click)="logout()" mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+    <mat-icon >logout</mat-icon>
+  </button>
 
-</header>
+  <button *ngIf="user" routerLink="/user" mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+    <mat-icon >person</mat-icon>
+  </button>
+</mat-toolbar>
