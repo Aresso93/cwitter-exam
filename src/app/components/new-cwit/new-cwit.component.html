@@ -5,9 +5,9 @@
       <mat-hint align="end">{{message.value.length}} / 140</mat-hint>
     </mat-form-field>
     <mat-form-field class="width">
-      <input [(ngModel)]="cwitUrl" [ngModelOptions]="{standalone: true}" placeholder="Es. HelenBuskNuda.jpg"><br>
+      <input [(ngModel)]="cwitUrl" [ngModelOptions]="{standalone: true}"matInput placeholder="Es. HelenBuskNuda.jpg"><br>
       <mat-hint align="start"><span>Aggiungi l'URL a un'immagine!</span></mat-hint>
-      <mat-hint align="end">A</mat-hint>
+      <mat-hint align="end"></mat-hint>
 
     </mat-form-field>
     <button mat-stroked-button color="accent" (click)="postCwit()">Posta</button>

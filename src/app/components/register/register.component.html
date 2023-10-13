@@ -1,20 +1,22 @@
-<form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+<form [formGroup]="registerForm" class="reg-form" (ngSubmit)="onSubmit()">
 
   <div>
-    <label for="username">username: </label>
+    <label for="username">Username*: </label>
     <input id="username" type="text" formControlName="username">
   </div>
 
   <div>
-    <label for="email">email: </label>
+    <label for="email">Email*: </label>
     <input id="email" type="email" formControlName="email">
   </div>
 
   <div>
-    <label for="psw">psw: </label>
+    <label for="psw">Password*: </label>
     <input id="psw" type="password" formControlName="psw">
   </div>
 
-
-  <button type="submit" [disabled]="!registerForm.valid">Submit</button>
+  <br>
+  <span>* = campi obbligatori</span>
+  <br>
+  <button mat-stroked-button color="accent" type="submit" [disabled]="!registerForm.valid">Submit</button>
 </form>
